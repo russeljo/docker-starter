@@ -3,13 +3,14 @@ ARG alpine_version=latest
 FROM alpine:${alpine_version}
 ARG buildno=1
 
+RUN apk add openjdk17
+
 WORKDIR /
 WORKDIR app
 WORKDIR build
 # / + app + build = /app/build
 
-RUN touch test.txt && echo "Hello World" >> test.txt
-RUN apk add openjdk17
+RUN touch test2.txt && echo "Hello World" >> test2.txt
 RUN cd .. \
     && wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.tar.gz \
     && tar -xvzf apache-tomcat-10.1.19.tar.gz \
