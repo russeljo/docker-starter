@@ -12,6 +12,8 @@ postgres                     16-alpine   c25f943328d7   6 weeks ago     245MB
 
 
 
+
+
 docker image inspect c25
 
 
